@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/home.css";
+import Product from "./Product";
 
 function Home() {
   return (
@@ -10,10 +11,21 @@ function Home() {
         alt=""
       />
 
-
       {/* Product id, title, price,rating, image */}
+      <div className="home__row">
+        <Product id={12345} title="the lean startup" price={11.33} rating={5} image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$" />
+        <Product id={12345} title="the lean startup" price={11.33} rating={5} image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$" />
+      </div>
       {/* product */}
+      <div className="home__row">
+          <Product id={12345} title="the lean startup" price={11.33} rating={5} image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$" />
+        <Product id={12345} title="the lean startup" price={11.33} rating={5} image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$" />
+        <Product id={12345} title="the lean startup" price={11.33} rating={5} image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$" />
+     
     </div>
+    </div>
+
+   
   );
 }
 
