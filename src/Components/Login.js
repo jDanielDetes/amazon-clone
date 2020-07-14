@@ -9,7 +9,7 @@ function Login() {
     const [password,setPassword] = useState('')
 
     const login = e =>{
-        e.preventdefault();
+        e.preventDefault();
 
         auth.signInWithEmailAndPassword(email,password)
         .then((auth) => {
@@ -20,7 +20,7 @@ function Login() {
     }
 
     const register = e =>{
-        e.preventdefault();
+        e.preventDefault();
         auth.createUserWithEmailAndPassword(email,password)
         .then(auth => {
             //created a user and logged in then redirect to homepage

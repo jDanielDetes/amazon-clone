@@ -37,3 +37,8 @@
 .product_rating {
   display: flex;
 }
+
+
+.rating{
+    color: #f0c14b;
+}

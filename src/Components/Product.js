@@ -1,6 +1,6 @@
 import React from 'react'
 import '../css/product.css'
-import star from '@material-ui/icons/Star'
+import StarIcon from '@material-ui/icons/StarRateRounded';
 import { useStateValue } from '../StateProvider'
 
 function Product({id,title,image,price,rating}) {
@@ -35,7 +35,7 @@ dispatch({
                     Array(rating)
                     .fill()
                     .map((_) =>(
-                        `:star:`
+                        <StarIcon className="rating"/>
                     ))
                 }
             </div>

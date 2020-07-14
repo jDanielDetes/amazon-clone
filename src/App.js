@@ -11,7 +11,7 @@ function App() {
     const [{user}, dispatch] = useStateValue();
 
     useEffect(() =>{
-        auth.onAuthStateChanged((authUser) => {
+       const unsubscribe = auth.onAuthStateChanged((authUser) => {
             if(authUser){
                 //user is logged in 
                 dispatch({
