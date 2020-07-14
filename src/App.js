@@ -1,10 +1,40 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from './Components/Header'
 import Home from "./Components/Home"
 import Checkout from "./Components/Checkout";
+import Login from './Components/Login'
+import {useStateValue} from './StateProvider'
+import {auth} from './firebase'
 
 function App() {
+    const [{user}, dispatch] = useStateValue();
+
+    useEffect(() =>{
+        auth.onAuthStateChanged((authUser) => {
+            if(authUser){
+                //user is logged in 
+                dispatch({
+                    type:'SET_USER',
+                    user:authUser
+                })
+            } else {
+                //user is logged out
+                dispatch({
+                    type:'SET_USER',
+                    user:null
+                })
+            }
+        })
+
+        return () =>{
+            // Any cleanup operations go here
+            unsubscribe();
+        }
+
+    },[])
+
+
   return (
     <Router>
       <div className="app">
@@ -14,7 +44,8 @@ function App() {
             <Checkout/>
             </Route>
             <Route path="/login">
-            <h1>Login page </h1>
+                <Login/>
+           
             </Route>
             {/*this is the default route */}
             <Route path="/">
