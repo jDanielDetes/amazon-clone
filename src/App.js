@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from './Components/Header'
 import Home from "./Components/Home"
+import Checkout from "./Components/Checkout";
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       <div className="app">
           <Switch>
             <Route path="/checkout">
-                <h1>checkout</h1>
+            <Header/>
+            <Checkout/>
             </Route>
             <Route path="/login">
             <h1>Login page </h1>
